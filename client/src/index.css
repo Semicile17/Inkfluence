@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink;
+  }
+
+  ::selection {
+    @apply bg-lime-400 text-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ink ring-offset-2 ring-offset-cream;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-ink {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white/80 px-3 py-1 text-xs font-medium text-ink/70;
+  }
+
+  .mark {
+    @apply rounded-lg bg-lime-400 px-1.5 py-0.5 [box-decoration-break:clone];
+  }
+
+  .card {
+    @apply rounded-3xl border border-ink/10 bg-white;
+  }
+
+  .input {
+    @apply w-full rounded-2xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink transition placeholder:text-ink/35 focus:border-ink focus:outline-none focus:ring-2 focus:ring-lime-400/70;
+  }
+
+  .label {
+    @apply mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/50;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/60;
+  }
+
+  .link-underline {
+    @apply underline decoration-lime-400 decoration-2 underline-offset-4 transition hover:decoration-ink;
+  }
+
+  .squiggle {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='8' viewBox='0 0 120 8'%3E%3Cpath d='M0 4c10-4 20-4 30 0s20 4 30 0 20-4 30 0 20 4 30 0' fill='none' stroke='%23191a23' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: bottom;
+  }
+
+  .prose-ink {
+    @apply max-w-none text-[1.0625rem] leading-[1.8] text-ink/80;
+  }
+
+  .prose-ink > * + * {
+    @apply mt-5;
+  }
+
+  .prose-ink h2 {
+    @apply mt-12 text-2xl font-semibold leading-tight text-ink sm:text-[1.85rem];
+  }
+
+  .prose-ink h3 {
+    @apply mt-9 text-xl font-semibold text-ink;
+  }
+
+  .prose-ink h4 {
+    @apply mt-7 text-lg font-semibold text-ink;
+  }
+
+  .prose-ink p {
+    @apply text-ink/80;
+  }
+
+  .prose-ink strong {
+    @apply font-semibold text-ink;
+  }
+
+  .prose-ink em {
+    @apply italic;
+  }
+
+  .prose-ink a {
+    @apply font-medium text-ink underline decoration-lime-400 decoration-2 underline-offset-4 transition hover:decoration-ink;
+  }
+
+  .prose-ink ul {
+    @apply my-5 list-none space-y-2.5 pl-0;
+  }
+
+  .prose-ink ol {
+    @apply my-5 list-decimal space-y-2.5 pl-5;
+  }
+
+  .prose-ink ul > li {
+    @apply relative pl-6;
+  }
+
+  .prose-ink ul > li::before {
+    content: '';
+    @apply absolute left-0 top-[0.65em] h-2 w-2 rounded-full bg-lime-400 ring-1 ring-ink/20;
+  }
+
+  .prose-ink ol > li {
+    @apply pl-1 marker:font-display marker:text-sm marker:font-semibold marker:text-ink/50;
+  }
+
+  .prose-ink blockquote {
+    @apply my-8 rounded-r-2xl border-l-4 border-lime-400 bg-lime-50 px-5 py-4 font-display text-lg font-medium leading-relaxed text-ink;
+  }
+
+  .prose-ink blockquote p {
+    @apply mt-0 text-ink;
+  }
+
+  .prose-ink code {
+    @apply rounded-md bg-ink/[0.06] px-1.5 py-0.5 font-mono text-[0.85em] text-ink;
+  }
+
+  .prose-ink pre {
+    @apply overflow-x-auto rounded-2xl bg-ink p-5 text-sm leading-relaxed text-lime-100;
+  }
+
+  .prose-ink pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .prose-ink hr {
+    @apply my-10 border-ink/10;
+  }
+
+  .prose-ink img {
+    @apply rounded-2xl border border-ink/10;
+  }
+
+  .prose-ink table {
+    @apply w-full border-collapse overflow-hidden text-sm;
+  }
+
+  .prose-ink th,
+  .prose-ink td {
+    @apply border border-ink/10 px-3 py-2 text-left;
+  }
+
+  .prose-ink th {
+    @apply bg-paper font-semibold;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
