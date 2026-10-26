@@ -6,11 +6,11 @@
   "rewrites": [
     {
       "source": "/api",
-      "destination": "https://inkfluence-api.vercel.app/api"
+      "destination": "https://inkfluence-pi.vercel.app/api"
     },
     {
       "source": "/api/:path*",
-      "destination": "https://inkfluence-api.vercel.app/api/:path*"
+      "destination": "https://inkfluence-pi.vercel.app/api/:path*"
     },
     {
       "source": "/:path*",
